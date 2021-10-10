@@ -1,5 +1,7 @@
 package Application;
 
+import OperationsBin.BinToDec;
+
 import java.util.Scanner;
 
 public class Main {
@@ -69,9 +71,11 @@ public class Main {
 
 			// Output verification
 			if(baseOut == 1) {
-				System.out.print("\nO número binário "+number+" convertido em Octal é: \n" );
+				System.out.print("\nO número binário "+number+" convertido em Octal é:" );
 			} else if(baseOut == 2) {
-				System.out.print("\nO número binário "+number+" convertido em Decimal é: \n" );
+				BinToDec binToDec = new BinToDec();
+				binToDec.setEntradaBinDec(number);
+				System.out.print("\nO número binário "+number+" convertido em Decimal é:" + BinToDec.conversionBinDec(number));
 			} else if(baseOut == 3) {
 				System.out.print("\nO número binário "+number+" convertido em hexadecimal é: \n" );
 			}
@@ -97,5 +101,5 @@ public class Main {
 			}
 		}
 	}
-}
+	}
 
