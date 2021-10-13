@@ -18,7 +18,7 @@ public class HexToDec {
     public void setEntradaHexToDec(String entradaHexToDec) {
         this.entradaHexToDec = entradaHexToDec;
     }
-    //Método que retorna a conversão de binario em decimal
+    //Método que retorna a conversão de hexadecimal em decimal
     public int conversionHexDec(String hex) {
         String digits = "0123456789ABCDEF";
         hex = hex.toUpperCase();
