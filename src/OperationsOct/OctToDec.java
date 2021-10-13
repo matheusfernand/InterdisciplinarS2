@@ -2,25 +2,27 @@ package OperationsOct;
 
 public class OctToDec {
 
-    private int index;
+    private int entradaOctDec;
 
-    public int getIndex() {
-        return index;
+    public OctToDec () {
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public OctToDec(String entradaOctToDec) {
+        this.entradaOctDec = entradaOctDec;
     }
 
-    public int calc() {
+    public int getEntradaOctToDec() { return entradaOctDec; }
 
+    public void setEntradaOctToDec(int entradaOctToDec) { this.entradaOctDec = entradaOctToDec; }
+
+    //Método que retorna a conversão de octal em decimal
+    public int conversionOctDec(int entradaOctDec) {
         int decimalNumber = 0, i = 0;
-
-        while(this.index != 0)
+        while(entradaOctDec != 0)
         {
-            decimalNumber += (this.index % 10) * Math.pow(8, i);
+            decimalNumber += (entradaOctDec % 10) * Math.pow(8, i);
             ++i;
-            this.index/=10;
+            entradaOctDec/=10;
         }
 
         return decimalNumber;

@@ -1,6 +1,8 @@
 package Application;
 
 import OperationsBin.BinToDec;
+import OperationsHex.HexToDec;
+import OperationsOct.OctToDec;
 
 import java.util.Scanner;
 
@@ -10,6 +12,7 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 		String number;
+		int numberI;
 		int baseOut;
 		int baseInput;
 		float result;
@@ -41,7 +44,7 @@ public class Main {
 		// To input Octal
 		else if (baseInput == 2) {
 			System.out.print("\nDigite um número octal: ");
-			number = input.next();
+			numberI = input.nextInt();
 
 			//Input data verification
 
@@ -51,11 +54,14 @@ public class Main {
 
 			// Output verification
 			if(baseOut == 1) {
-				System.out.print("\nO número octal "+number+" convertido em decimal é: \n" );
+				OctToDec octToDec = new OctToDec();
+				octToDec.setEntradaOctToDec(numberI);
+
+				System.out.print("\nO número octal "+numberI+" convertido em decimal é: " + octToDec.conversionOctDec(numberI));
 			} else if(baseOut == 2) {
-				System.out.print("\nO número octal "+number+" convertido em binário é: \n" );
+				System.out.print("\nO número octal "+numberI+" convertido em binário é: \n" );
 			} else if(baseOut == 3) {
-				System.out.print("\nO número octal "+number+" convertido em hexadecimal é: \n" );
+				System.out.print("\nO número octal "+numberI+" convertido em hexadecimal é: \n" );
 			}
 		}
 		// To input Binário
@@ -95,7 +101,9 @@ public class Main {
 			if(baseOut == 1) {
 				System.out.print("\nO número hexadecimal "+number+" convertido em Octal é: \n" );
 			} else if(baseOut == 2) {
-				System.out.print("\nO número hexadecimal "+number+" convertido em Decimal é: \n" );
+				HexToDec hexToDec = new HexToDec();
+				hexToDec.setEntradaHexToDec(number);
+				System.out.print("\nO número hexadecimal " + number + " convertido em Decimal é: " + hexToDec.conversionHexDec(number));
 			} else if(baseOut == 3) {
 				System.out.print("\nO número hexadecimal "+number+" convertido em hexadecimal é: \n" );
 			}
