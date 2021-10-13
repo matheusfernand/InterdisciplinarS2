@@ -1,6 +1,7 @@
 package Application;
 
 import OperationsBin.BinToDec;
+import OperationsDec.DecToOct;
 import OperationsHex.HexToDec;
 import OperationsOct.OctToDec;
 
@@ -24,7 +25,7 @@ public class Main {
 		// To input Decimal
 		if (baseInput == 1) {
 			System.out.print("\nDigite um número Decimal: ");
-			number = input.next();
+			numberI = input.nextInt();
 
 			//Input data verification
 
@@ -34,11 +35,13 @@ public class Main {
 
 			// Output verification
 			if(baseOut == 1) {
-				System.out.print("\nO número decimal "+number+" convertido em octal é: \n" );
+				DecToOct decToOct = new DecToOct();
+				decToOct.setEntradaDecToOct(numberI);
+				System.out.print("\nO número decimal "+numberI+" convertido em octal é: "+decToOct.conversionDecOct());
 			} else if(baseOut == 2) {
-				System.out.print("\nO número decimal "+number+" convertido em binário é: \n" );
+				System.out.print("\nO número decimal "+numberI+" convertido em binário é: \n" );
 			} else if(baseOut == 3) {
-				System.out.print("\nO número decimal "+number+" convertido em hexadecimal é: \n" );
+				System.out.print("\nO número decimal "+numberI+" convertido em hexadecimal é: \n" );
 			}
 		}
 		// To input Octal
