@@ -2,32 +2,32 @@ package OperationsDec;
 
 public class DecToOct {
 
-    private int entradaDecToOct;
+    private int entradaDecOct;
 
     public DecToOct(){
     }
 
     public DecToOct(int entradaDecToOct) {
-        this.entradaDecToOct = entradaDecToOct;
+        this.entradaDecOct = entradaDecToOct;
     }
 
-    public int getEntradaDecToOct() {
-        return entradaDecToOct;
+    public int getEntradaDecOct() {
+        return entradaDecOct;
     }
 
-    public void setEntradaDecToOct(int entradaDecToOct) {
-        this.entradaDecToOct = entradaDecToOct;
+    public void setEntradaDecOct(int entradaDecOct) {
+        this.entradaDecOct = entradaDecOct;
     }
 
     //Método que retorna a conversão de decimal em octal
-    public int conversionDecOct()
+    public int conversionDecOct(int entradaDecOct)
     {
         int octalNumber = 0, i = 1;
 
-        while (entradaDecToOct != 0)
+        while (entradaDecOct != 0)
         {
-            octalNumber += (entradaDecToOct % 8) * i;
-            entradaDecToOct /= 8;
+            octalNumber += (entradaDecOct % 8) * i;
+            entradaDecOct /= 8;
             i *= 10;
         }
 

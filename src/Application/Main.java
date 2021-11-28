@@ -1,5 +1,12 @@
 package Application;
 
+import OperationsBin.BinToDec;
+import OperationsDec.DecToBin;
+import OperationsDec.DecToHex;
+import OperationsDec.DecToOct;
+import OperationsHex.HexToDec;
+import OperationsOct.OctToDec;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +17,7 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 		int number = 0;
-		String numberHexa;
+		String numberHexa = null;
 		int baseOut = 0;
 		int baseInput = 0;
 		float result;
@@ -61,12 +68,16 @@ public class Main {
 				System.exit(0);
 			}
 
+			// Print conversion on screen
 			if(baseOut == 1) {
-				System.out.print("\nO número decimal "+number+" convertido em octal é: \n" );
+				DecToOct decToOct = new DecToOct();
+				System.out.print("\nO número decimal "+number+" convertido em octal é: \n" +decToOct.conversionDecOct(number));
 			} else if(baseOut == 2) {
-				System.out.print("\nO número decimal "+number+" convertido em binário é: \n" );
+				DecToBin decToBin = new DecToBin();
+				System.out.print("\nO número decimal "+number+" convertido em binário é: \n" + decToBin.conversionDecBin(number));
 			} else if(baseOut == 3) {
-				System.out.print("\nO número decimal "+number+" convertido em hexadecimal é: \n" );
+				DecToHex decToHex = new DecToHex();
+				System.out.print("\nO número decimal "+number+" convertido em hexadecimal é: \n" + decToHex.conversionDecHex(number));
 			}
 		}
 		// To input Octal
@@ -100,12 +111,16 @@ public class Main {
 				System.exit(0);
 			}
 
+			// Print conversion on screen
+			OctToDec octToDec = new OctToDec();
 			if(baseOut == 1) {
-				System.out.print("\nO número octal "+number+" convertido em decimal é: \n" );
+				System.out.print("\nO número octal "+number+" convertido em decimal é: \n" + octToDec.conversionOctDec(number));
 			} else if(baseOut == 2) {
-				System.out.print("\nO número octal "+number+" convertido em binário é: \n" );
+				DecToBin decToBin = new DecToBin();
+				System.out.print("\nO número octal "+number+" convertido em binário é: \n" + decToBin.conversionDecBin(octToDec.conversionOctDec(number)));
 			} else if(baseOut == 3) {
-				System.out.print("\nO número octal "+number+" convertido em hexadecimal é: \n" );
+				DecToHex decToHex= new DecToHex();
+				System.out.print("\nO número octal "+number+" convertido em hexadecimal é: \n" +decToHex.conversionDecHex(octToDec.conversionOctDec(number)));
 			}
 		}
 		// To input Binário
@@ -139,14 +154,16 @@ public class Main {
 				System.exit(0);
 			}
 
+			// Print conversion on screen
+			BinToDec binToDec = new BinToDec();
 			if(baseOut == 1) {
-				System.out.print("\nO número binário "+number+" convertido em Octal é: \n" );
+				DecToOct decToOct = new DecToOct();
+				System.out.print("\nO número binário "+number+" convertido em Octal é: \n" +decToOct.conversionDecOct(binToDec.conversionBinDec(number)));
 			} else if(baseOut == 2) {
-//				int numberw = Integer.getInteger(number);
-//				BinToDec tested = new BinToDec(numberw);
-//				tested.calculadorCientifica(tested);
+				System.out.print("\nO número binário "+number+" convertido em Decimal é: \n" +binToDec.conversionBinDec(number));
 			} else if(baseOut == 3) {
-				System.out.print("\nO número binário "+number+" convertido em hexadecimal é: \n" );
+				DecToHex decToHex = new DecToHex();
+				System.out.print("\nO número binário "+number+" convertido em hexadecimal é: \n" +decToHex.conversionDecHex(binToDec.conversionBinDec(number)));
 			}
 		}
 		// To input Hexadecimal
@@ -180,12 +197,17 @@ public class Main {
 				System.exit(0);
 			}
 
+			// Print conversion on screen
+			HexToDec hexToDec = new HexToDec();
 			if(baseOut == 1) {
-				System.out.print("\nO número hexadecimal "+number+" convertido em Octal é: \n" );
+				DecToOct decToOct = new DecToOct();
+				System.out.print("\nO número hexadecimal "+numberHexa+" convertido em Octal é: \n" +decToOct.conversionDecOct(hexToDec.conversionHexDec(numberHexa)));
 			} else if(baseOut == 2) {
-				System.out.print("\nO número hexadecimal "+number+" convertido em Decimal é: \n" );
+				System.out.print("\nO número hexadecimal "+numberHexa+" convertido em Decimal é: \n" + hexToDec.conversionHexDec(numberHexa));
 			} else if(baseOut == 3) {
-				System.out.print("\nO número hexadecimal "+number+" convertido em hexadecimal é: \n" );
+				DecToBin decToBin = new DecToBin();
+				System.out.print("\nO número hexadecimal "+numberHexa+" convertido em binário é: \n" + decToBin.conversionDecBin(hexToDec.conversionHexDec(numberHexa)));
+
 			}
 		}
 	}

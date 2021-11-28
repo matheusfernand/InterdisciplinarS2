@@ -20,13 +20,20 @@ public class BinToDec {
     }
 
     //Método que retorna a conversão de binario em decimal
-    public static int conversionBinDec(String entradaBinDec) {
-        int potencia = 0;
-        int decimal = 0;
-        for (int i = entradaBinDec.length() - 1; i>=0; i-- ) {
-            decimal += Math.pow(2, potencia) * Character.getNumericValue(entradaBinDec.charAt(i));
-            potencia++;
-        }return decimal;
+    public static int conversionBinDec(int entradaBinDec) {
+            int decimal = 0;
+            int n = 0;
+            while(true){
+                if(entradaBinDec == 0){
+                    break;
+                } else {
+                    int temp = entradaBinDec%10;
+                    decimal += temp*Math.pow(2, n);
+                    entradaBinDec = entradaBinDec/10;
+                    n++;
+                }
+            }
+            return decimal;
+        }
     }
 
-}
