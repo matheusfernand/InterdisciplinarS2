@@ -2,23 +2,6 @@ package OperationsBin;
 
 public class BinToDec {
 
-    private String entradaBinDec;
-
-    public BinToDec() {
-    }
-
-    public BinToDec(String entradaBinDec) {
-        this.entradaBinDec = entradaBinDec;
-    }
-
-    public String getEntradaBinDec() {
-        return entradaBinDec;
-    }
-
-    public void setEntradaBinDec(String entradaBinDec) {
-        this.entradaBinDec = entradaBinDec;
-    }
-
     //Método que retorna a conversão de binario em decimal
     public static int conversionBinDec(int entradaBinDec) {
             int decimal = 0;

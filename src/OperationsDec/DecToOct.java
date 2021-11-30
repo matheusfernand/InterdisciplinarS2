@@ -2,23 +2,6 @@ package OperationsDec;
 
 public class DecToOct {
 
-    private int entradaDecOct;
-
-    public DecToOct(){
-    }
-
-    public DecToOct(int entradaDecToOct) {
-        this.entradaDecOct = entradaDecToOct;
-    }
-
-    public int getEntradaDecOct() {
-        return entradaDecOct;
-    }
-
-    public void setEntradaDecOct(int entradaDecOct) {
-        this.entradaDecOct = entradaDecOct;
-    }
-
     //Método que retorna a conversão de decimal em octal
     public int conversionDecOct(int entradaDecOct)
     {

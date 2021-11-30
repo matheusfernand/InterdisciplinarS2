@@ -11,8 +11,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
-
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
@@ -20,7 +18,6 @@ public class Main {
 		String numberHexa = null;
 		int baseOut = 0;
 		int baseInput = 0;
-		float result;
 
 		// Menu selection input base.
 		System.out.print("\n 1 Decimal \n 2 Octal \n 3 Binário \n 4 Hexadecimal\nEscolha a base de entrada: ");

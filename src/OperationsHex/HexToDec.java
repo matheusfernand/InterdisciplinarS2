@@ -2,23 +2,6 @@ package OperationsHex;
 
 public class HexToDec {
 
-    private String entradaHexDec;
-
-    public HexToDec() {
-    }
-
-    public HexToDec(String entradaHexDec) {
-        this.entradaHexDec = entradaHexDec;
-    }
-
-    public String getEntradaHexDec() {
-        return this.entradaHexDec;
-    }
-
-    public void setEntradaHexDec(String entradaHexDec) {
-        this.entradaHexDec = entradaHexDec;
-    }
-
     //Método que retorna a conversão de hexadecimal em decimal
     public int conversionHexDec(String entradaHexDec) {
         String digits = "0123456789ABCDEF";
